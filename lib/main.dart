@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_generator/screens/home_screen_mobile.dart';
+import 'package:qr_generator/screens/home_screen_web.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,11 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: (kIsWeb) ? HomeScreenWeb() : HomeScreenMobile(),
     );
   }
 }
